@@ -1,5 +1,7 @@
 # learning_examples_b_vue
 
+The basic examples from the https://vuejs.org/v2/guide with some tweeks here and there and some custom examples.
+
 ## Project setup
 ```
 npm install
