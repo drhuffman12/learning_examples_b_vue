@@ -6,8 +6,8 @@
       <router-link to="/about">About</router-link>
       |
       <a href="/simple_examples.html">Simple Examples</a>
-      <!-- |
-      <a href="/example_misc">Example Misc</a> -->
+      |
+      <a href="/example_misc">Example Misc</a>
     </div>
     <router-view/>
   </div>
