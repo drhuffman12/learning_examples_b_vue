@@ -1,0 +1,201 @@
+<html>
+  <head>
+    <style>
+      .foo {
+        outline: 1px solid yellow;
+      }
+
+      .bar {
+        outline: 1px solid green;
+      }
+    </style>
+
+  <style lang="scss">
+    #app {
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+    }
+    #nav {
+      padding: 30px;
+      a {
+        font-weight: bold;
+        color: #2c3e50;
+        &.router-link-exact-active {
+          color: #42b983;
+        }
+      }
+    }
+    </style>
+
+
+  </head>
+  <body>
+    <div id="app"><div id="nav"></div><a href="/">Home</a></div></div>
+
+    <h1>Simple examples based on <a href="https://vuejs.org/v2/guide/index.html">Vue Guide - Introduction</a></h1>
+    <!-- app-1 -->
+    <hr/><h2>app-1</h2>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="https://unpkg.com/vue"></script>
+    <!-- <script src="../vue.js"></script> -->
+    <div id="app">
+      <p>{{ message }}</p>
+    </div>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue.js!'
+        }
+      })
+    </script>
+
+    <!-- app-2 -->
+    <hr/><h2>app-2</h2>
+    <div id="app-2">
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds
+        to see my dynamically bound title!
+      </span>
+    </div>
+    <script>
+      var app2 = new Vue({
+        el: '#app-2',
+        data: {
+          message: 'You loaded this page on ' + new Date().toLocaleString()
+        }
+      })
+    </script>
+
+    <!-- app-2b -->
+    <hr/><h2>app-2b</h2>
+    <div id="app-2b">
+      <span v-bind:title="message" v-bind:class="message_class" v-on:click="toggleOutline">
+        Hover your mouse over me for a few seconds
+        to see my dynamically bound title!
+      </span>
+      <button v-on:click="toggleOutline">Toggle Outline</button>
+    </div>
+    <script>
+      var app2b = new Vue({
+        el: '#app-2b',
+        data: {
+          message: 'You loaded this page on ' + new Date().toLocaleString(),
+          message_class: 'foo'
+        },
+        methods: {
+          toggleOutline: function () {
+            this.message_class = (this.message_class == 'foo') ? 'bar' : 'foo'
+          }
+        }
+        
+      })
+    </script>
+
+    <!-- app-3 -->
+    <hr/><h2>app-3</h2>
+    <div id="app-3">
+      <span v-if="seen">Now you see me</span>
+    </div>
+    <script>
+      var app3 = new Vue({
+        el: '#app-3',
+        data: {
+          seen: true
+        }
+      })
+    </script>
+
+    <!-- app-4 -->
+    <hr/><h2>app-4</h2>
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+    <script>
+      var app4 = new Vue({
+        el: '#app-4',
+        data: {
+          todos: [
+            { text: 'Learn JavaScript' },
+            { text: 'Learn Vue' },
+            { text: 'Build something awesome' }
+          ]
+        }
+      })
+    </script>
+
+    <!-- app-4b -->
+    <hr/><h2>app-4b</h2>
+    <div id="app-4b">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+      <input v-model="todoNext">
+      <button v-on:click="addTodo">Add Todo</button>
+    </div>
+    <script>
+      var app4b = new Vue({
+        el: '#app-4b',
+        data: {
+          todoNext: '',
+          todos: [
+            { text: 'Learn JavaScript' },
+            { text: 'Learn Vue' },
+            { text: 'Build something awesome' }
+          ]
+        },
+        methods: {
+          addTodo: function () {
+            this.todos.push({text: this.todoNext})
+          }
+        }
+      })
+    </script>
+
+    <!-- app-5 -->
+    <hr/><h2>app-5</h2>
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+    <script>
+      var app5 = new Vue({
+        el: '#app-5',
+        data: {
+          message: 'Hello Vue.js!'
+        },
+        methods: {
+          reverseMessage: function () {
+            this.message = this.message.split('').reverse().join('')
+          }
+        }
+      })
+    </script>
+
+    <!-- app-6 -->
+    <hr/><h2>app-6</h2>
+    <div id="app-6">
+      <p>{{ message }}</p>
+      <input v-model="message">
+    </div>
+    <script>
+      var app6 = new Vue({
+        el: '#app-6',
+        data: {
+          message: 'Hello Vue!'
+        }
+      })
+    </script>
+
+    <hr/>
+  </body>
+</html>
