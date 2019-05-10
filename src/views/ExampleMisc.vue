@@ -1,11 +1,11 @@
 <template>
   <div class="example_misc">
-    <ExampleMiscA msg="Welcome to ExampleMiscA"/>
+    <ExampleBarGraph msg="Welcome to ExampleBarGraph"/>
   </div>
 </template>
 
 <script>
-import ExampleMiscA from '@/components/ExampleMiscA.vue'
+import ExampleBarGraph from '@/components/ExampleBarGraph.vue'
 
 export default {
   name: 'example_misc',
@@ -18,7 +18,7 @@ export default {
     }
   },
   components: {
-    ExampleMiscA
+    ExampleBarGraph
   }
 }
 </script>
