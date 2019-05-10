@@ -1,36 +1,24 @@
 <html>
   <head>
     <style>
-      .foo {
-        outline: 1px solid yellow;
-      }
-
-      .bar {
-        outline: 1px solid green;
-      }
-    </style>
-
-  <style lang="scss">
-    #app {
-      font-family: 'Avenir', Helvetica, Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-align: center;
-      color: #2c3e50;
-    }
-    #nav {
-      padding: 30px;
-      a {
-        font-weight: bold;
+      #app {
+        font-family: 'Avenir', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-align: center;
         color: #2c3e50;
-        &.router-link-exact-active {
-          color: #42b983;
-        }
       }
-    }
+      #nav {
+        padding: 30px;
+      }
+      #nav a {
+          font-weight: bold;
+          color: #2c3e50;
+          /* &.router-link-exact-active {
+            color: #42b983;
+          } */
+        }
     </style>
-
-
   </head>
   <body>
     <div id="app"><div id="nav"></div><a href="/">Home</a></div></div>
